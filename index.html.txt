@@ -1,0 +1,370 @@
+                      ```html
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Araçla Bulgaristan ve Yunanistan: Aile Rehberi</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@75..125,500..900&family=Public+Sans:wght@400;500;600&display=swap" rel="stylesheet">
+<style>
+:root {
+  box-sizing: border-box;
+  padding-top: env(safe-area-inset-top, 0px);
+  padding-bottom: env(safe-area-inset-bottom, 0px);
+  --bg: #f5f6f8;
+  --panel: #ffffff;
+  --ink: #101a2e;
+  --muted: #4a5670;
+  --rule: #d6dce8;
+  --sign: #17408a;
+  --sign-ink: #ffffff;
+  --yellow: #f3b700;
+  --paid: #2f6fdb;
+  --note-bg: #fff6d6;
+  --note-ink: #4a3900;
+  --display: "Archivo", "Arial Narrow", "Helvetica Neue", Arial, sans-serif;
+  --body: "Public Sans", "Segoe UI", Roboto, Arial, sans-serif;
+}
+@media (prefers-color-scheme: dark) {
+  :root:not([data-theme="light"]) {
+    --bg: #0d1424; --panel: #151f37; --ink: #e9edf6; --muted: #aab4cb; --rule: #2a3656;
+    --paid: #6b9cf0; --note-bg: #3a3011; --note-ink: #f7e6a6;
+  }
+}
+:root[data-theme="dark"] {
+  --bg: #0d1424; --panel: #151f37; --ink: #e9edf6; --muted: #aab4cb; --rule: #2a3656;
+  --paid: #6b9cf0; --note-bg: #3a3011; --note-ink: #f7e6a6;
+}
+*, *::before, *::after { box-sizing: inherit; }
+html { height: 100%; scroll-padding-top: env(safe-area-inset-top, 0px); scroll-behavior: smooth; }
+body { margin: 0; min-height: 100%; background: var(--bg); color: var(--ink); font-family: var(--body); font-size: 17px; line-height: 1.6; }
+a { color: var(--paid); text-underline-offset: 3px; }
+a:focus-visible, button:focus-visible, input:focus-visible { outline: 3px solid var(--yellow); outline-offset: 2px; }
+.wrap { width: 100%; max-width: 760px; margin: 0 auto; padding: 0 20px; }
+
+/* hero */
+.hero { background: var(--sign); color: var(--sign-ink); padding: 44px 0 36px; }
+.hero .wrap { display: grid; grid-template-columns: 1fr auto; gap: 28px; align-items: center; }
+.hero h1 { font-family: var(--display); font-stretch: 85%; font-weight: 800; font-size: clamp(2rem, 7vw, 3.4rem); line-height: 1.04; margin: 0 0 14px; letter-spacing: -0.01em; }
+.hero p { margin: 0; max-width: 34em; font-size: 1.08rem; color: #dbe5fa; }
+.psign { width: 112px; height: 112px; flex: none; }
+@media (max-width: 560px) { .hero .wrap { grid-template-columns: 1fr; } .psign { width: 84px; height: 84px; order: -1; } }
+
+/* nav */
+.toc { background: var(--panel); border-bottom: 1px solid var(--rule); position: sticky; top: env(safe-area-inset-top, 0px); z-index: 5; }
+.toc ul { list-style: none; margin: 0; padding: 0 20px; display: flex; gap: 22px; overflow-x: auto; max-width: 760px; margin-inline: auto; }
+.toc a { display: block; padding: 13px 0; font-weight: 600; font-size: 0.95rem; color: var(--ink); text-decoration: none; white-space: nowrap; border-bottom: 3px solid transparent; }
+.toc a:hover { border-bottom-color: var(--yellow); }
+
+/* sections */
+section { padding: 44px 0 8px; }
+h2 { font-family: var(--display); font-stretch: 90%; font-weight: 800; font-size: clamp(1.55rem, 4.6vw, 2.1rem); line-height: 1.12; margin: 0 0 12px; }
+h3 { font-family: var(--display); font-weight: 700; font-size: 1.15rem; margin: 26px 0 6px; }
+p { margin: 0 0 14px; }
+.lead { font-size: 1.1rem; color: var(--muted); }
+
+/* the kerb: parking line colours */
+.kerb { margin: 22px 0 8px; border: 1px solid var(--rule); background: var(--panel); border-radius: 6px; overflow: hidden; }
+.kerb-row { display: grid; grid-template-columns: 10px 1fr; }
+.kerb-row + .kerb-row { border-top: 1px solid var(--rule); }
+.kerb-row .bar { background: var(--c); }
+.kerb-row.white .bar { background: repeating-linear-gradient(0deg, #fff 0 10px, #cfd6e4 10px 12px); border-right: 1px solid var(--rule); }
+.kerb-row .txt { padding: 14px 18px; }
+.kerb-row strong { font-family: var(--display); font-size: 1.1rem; display: block; }
+.kerb-row span { color: var(--muted); font-size: 0.97rem; }
+
+/* facts */
+.facts { width: 100%; border-collapse: collapse; margin: 14px 0 6px; background: var(--panel); border: 1px solid var(--rule); font-size: 0.98rem; }
+.facts th, .facts td { text-align: left; padding: 11px 14px; border-bottom: 1px solid var(--rule); vertical-align: top; }
+.facts th { font-weight: 600; color: var(--muted); width: 46%; }
+.facts tr:last-child th, .facts tr:last-child td { border-bottom: 0; }
+.scroll { overflow-x: auto; }
+.price { font-family: var(--display); font-weight: 700; white-space: nowrap; }
+
+.note { background: var(--note-bg); color: var(--note-ink); border-left: 5px solid var(--yellow); padding: 13px 16px; margin: 18px 0; border-radius: 0 6px 6px 0; font-size: 0.97rem; }
+.note b { font-weight: 600; }
+
+ul.tips { padding-left: 1.2em; margin: 0 0 14px; }
+ul.tips li { margin-bottom: 7px; }
+
+/* vignette helper */
+.helper { background: var(--panel); border: 1px solid var(--rule); border-radius: 6px; padding: 18px; margin: 18px 0; }
+.helper label { font-weight: 600; display: block; margin-bottom: 8px; }
+.helper .row { display: flex; gap: 10px; flex-wrap: wrap; align-items: center; }
+.helper input { font: inherit; width: 6.5em; padding: 10px 12px; border: 2px solid var(--rule); border-radius: 6px; background: var(--bg); color: var(--ink); }
+.helper output { display: block; margin-top: 14px; font-size: 1.02rem; min-height: 3em; }
+.helper output strong { font-family: var(--display); font-size: 1.3rem; }
+
+.soon { list-style: none; padding: 0; margin: 14px 0; }
+.soon li { padding: 12px 16px; border: 1px dashed var(--rule); border-radius: 6px; margin-bottom: 8px; color: var(--muted); background: var(--panel); }
+.soon li b { color: var(--ink); font-weight: 600; }
+
+footer { margin-top: 52px; padding: 28px 0 40px; border-top: 1px solid var(--rule); color: var(--muted); font-size: 0.92rem; }
+footer ul { padding-left: 1.2em; }
+footer li { margin-bottom: 4px; }
+</style>
+</head>
+<body>
+
+<header class="hero">
+  <div class="wrap">
+    <div>
+      <h1>Araçla Bulgaristan ve Yunanistan: aile rehberi</h1>
+      <p>Park yeri, yol ücreti ve ceza konularında çocuklu ailelerin yolda en sık yaşadığı sorunlar, güncel kaynaklarla derlendi.</p>
+    </div>
+    <svg class="psign" viewBox="0 0 112 112" role="img" aria-label="Park işareti">
+      <rect x="3" y="3" width="106" height="106" rx="14" fill="#2f6fdb" stroke="#fff" stroke-width="5"/>
+      <text x="56" y="82" text-anchor="middle" font-family="Archivo, Arial, sans-serif" font-weight="800" font-size="84" fill="#fff">P</text>
+    </svg>
+  </div>
+</header>
+
+<nav class="toc" aria-label="Bölümler">
+  <ul>
+    <li><a href="#sinir">Sınır ve giriş</a></li>
+    <li><a href="#belgeler">Belgeler</a></li>
+    <li><a href="#yunan-park">Yunanistan'da park</a></li>
+    <li><a href="#sofya-park">Sofya'da park</a></li>
+    <li><a href="#vinyet">Bulgaristan vinyeti</a></li>
+    <li><a href="#yunan-yol">Yunanistan yol ücreti</a></li>
+    <li><a href="#siradaki">Sırada</a></li>
+    <li><a href="#kaynaklar">Kaynaklar</a></li>
+  </ul>
+</nav>
+
+<main class="wrap">
+
+<section id="sinir">
+  <h2>Sınır geçişi ve giriş şartları</h2>
+  <p class="lead">Araçla gidecek ailelerde asıl zaman kaybı sınırda yaşanıyor. Önce vize ve belge durumunu netleştirin, sonra geçiş saatinizi ve kapınızı planlayın.</p>
+
+  <h3>Vize</h3>
+  <p>Dışişleri Bakanlığı'na göre umuma mahsus (bordo) pasaport sahibi Türk vatandaşları Bulgaristan'a girişte vizeye tabi. Bulgaristan Schengen bölgesinde olduğu için Schengen vizesiyle giriş yapılıyor. Hususi (yeşil) pasaport hamilleri ilk giriş tarihinden itibaren 180 gün içinde 90 gün vizesiz kalabiliyor. Yunanistan da Schengen bölgesinde olduğundan, bordo pasaportlu aileler için orada da Schengen vizesi gerekiyor.</p>
+  <p>Vizenin hem gideceğiniz ülkeleri hem de yol üstünde geçeceğiniz ülkeleri kapsadığından emin olun. Ailedeki her bireyin pasaportu ve vizesi ayrı ayrı kontrol edilir.</p>
+
+  <h3>Biyometrik kayıt (EES)</h3>
+  <p>AB Giriş/Çıkış Sistemi 10 Nisan 2026'dan itibaren tüm Schengen bölgesinde zorunlu uygulanıyor. Sistem giriş ve çıkışta parmak izi ve yüz tanıma verilerini kaydediyor. Dışişleri Bakanlığı, bu işlemler nedeniyle sınır kapılarında bekleme sürelerinin uzayabileceğini belirtiyor. Çocuklu yolculukta planınıza fazladan zaman koyun.</p>
+
+  <h3>Hangi kapı nereye açılıyor?</h3>
+  <div class="scroll">
+  <table class="facts">
+    <tr><th>Bulgaristan'a</th><td>Kapıkule, Hamzabeyli, Dereköy</td></tr>
+    <tr><th>Yunanistan'a</th><td>İpsala, Pazarkule</td></tr>
+  </table>
+  </div>
+  <p>Kapıkule Avrupa'nın en yoğun kara sınır kapısı. Yaz tatili dönüşlerinde yoğunluk özellikle artıyor: Temmuz ayında Kapıkule'den tek günde 35 bin 887 yolcu girişi yapılarak rekor kırıldı. Yoğun dönemlerde polis ve jandarma bazı araçları diğer kapılara yönlendirebiliyor.</p>
+
+  <ul class="tips">
+    <li>Bulgaristan rotasında Kapıkule yerine Hamzabeyli'yi, Yunanistan rotasında İpsala ile Pazarkule'yi karşılaştırın.</li>
+    <li>Resmî gümrük verilerine dayanan kuyruk bilgisi için <a href="https://nakordoni.eu/tr/id/id_385/real_time/1">Nakordoni kuyruk sayfasına</a> yola çıkmadan ve yoldayken bakın. Bu, resmî bir kurum sitesi değil, gümrük verilerini derleyen bağımsız bir hizmet.</li>
+    <li>Tatil başlangıcı ve bitişi hafta sonlarına denk geliyorsa, geçişi hafta içine ya da gece saatlerine kaydırmak kuyruğu kısaltabilir.</li>
+    <li>Çocuklar için su, atıştırmalık, yedek kıyafet ve araç içi oyalanma planı yapın. Kuyrukta saatlerce beklemek mümkün.</li>
+  </ul>
+
+  <div class="note"><b>Dikkat:</b> Yunanistan'daki grev, TIR yoğunluğu ve tatil dönüşleri kapılardaki durumu gün içinde değiştirebilir. Bekleme süresi için sabit bir rakım vermiyoruz, çünkü rakamlar saatten saate değişiyor.</div>
+</section>
+
+<section id="belgeler">
+  <h2>Araç ve aile belgeleri</h2>
+  <p class="lead">Sınırda en çok sorun çıkaran şey eksik ya da yanlış belge. Aşağıdaki liste, Türk plakalı araçla Yunanistan veya Bulgaristan'a gidecek aileler için sık anılan belgeleri topluyor.</p>
+
+  <table class="facts">
+    <tr><th>Pasaport ve vize</th><td>Ailedeki her bireyin pasaportu ve vizesi ayrı kontrol edilir. Transit geçilen ülkeleri de kapsamalı.</td></tr>
+    <tr><th>Ehliyet</th><td>Yeni tip çipli Türk ehliyeti. Eski tip ehliyetle sorun yaşanabileceği belirtiliyor, yola çıkmadan yenilemek en güvenlisi.</td></tr>
+    <tr><th>Araç ruhsatı</th><td>Aslı yanınızda olmalı.</td></tr>
+    <tr><th>Yeşil kart</th><td>Yurt dışı zorunlu trafik sigortası. Sadece karşı tarafın zararını karşılar.</td></tr>
+    <tr><th>Vekâletname</th><td>Araç size ait değilse ya da ruhsat sahibi yolculukta yoksa noter onaylı, yurt dışına çıkışı açıkça belirten belge. Kiralık araçta kiralama şirketinden alınır.</td></tr>
+    <tr><th>Seyahat sağlık sigortası</th><td>Schengen vizesi başvurusunda isteniyor ve vize süresini kapsamalı.</td></tr>
+  </table>
+
+  <h3>Çocuklarla seyahatte</h3>
+  <p>Vize başvurularında 18 yaşından küçükler için muvafakatname isteniyor. Sınırda ek belge istenip istenmediğini, özellikle çocukla yalnız bir ebeveyn seyahat ediyorsa, yola çıkmadan konsolosluktan ya da emniyetten teyit edin.</p>
+
+  <div class="note"><b>Kaynak notu:</b> Bu liste çoğunlukla sigorta ve araç kiralama şirketlerinin rehberlerine dayanıyor, resmî bir kaynak değil. Vize ve giriş şartları için yukarıdaki Dışişleri Bakanlığı bilgisi esas alınmalı. Yurt dışına çıkış harcı gibi ek masraflar için güncel tutarı resmî kaynaklardan öğrenin.</div>
+</section>
+
+<section id="yunan-park">
+  <h2>Yunanistan'da park: önce işarete, sonra çizgiye bakın</h2>
+  <p class="lead">Park kuralları ülke genelinde aynı. 2025 sonundan beri güncellenen trafik kanunuyla şehir merkezlerinde, limanlarda, yaya bölgelerinde ve ücretli park alanlarında denetim sıkılaştırıldı.</p>
+
+  <div class="kerb" role="list">
+    <div class="kerb-row" role="listitem" style="--c: var(--paid)">
+      <div class="bar"></div>
+      <div class="txt"><strong>Mavi çizgi: ücretli park</strong><span>Genellikle süre sınırı var, ödeme gerekiyor.</span></div>
+    </div>
+    <div class="kerb-row white" role="listitem">
+      <div class="bar"></div>
+      <div class="txt"><strong>Beyaz çizgi: çoğunlukla ücretsiz</strong><span>Yine de levhada süre sınırı yazabilir.</span></div>
+    </div>
+    <div class="kerb-row" role="listitem" style="--c: var(--yellow)">
+      <div class="bar"></div>
+      <div class="txt"><strong>Sarı çizgi: park yasak</strong><span>Hiçbir saatte, istisnasız.</span></div>
+    </div>
+  </div>
+  <p>Levha ile yer işareti çelişirse levha geçerlidir. Mavi zemin üzerinde beyaz "P" levhası resmî park alanını gösterir; yanında süre ve ödeme bilgisi olabilir.</p>
+
+  <h3>Cezaya en çok yol açan hatalar</h3>
+  <ul class="tips">
+    <li>Park sayacı olmayan yeri otomatik olarak ücretsiz ve sınırsız sanmak.</li>
+    <li>Dar sokakta kavşağa çok yakın park etmek. Araç yolu tek araçlık bırakıyorsa genellikle yasal park sayılmaz.</li>
+    <li>Yaya bölgesi, liman yaklaşım yolu, servis ve yükleme alanlarında "beş dakika" durmak. Buralarda araç çekilebilir veya tekerleğine kelepçe takılabilir.</li>
+    <li>Plajda kuma ya da erişim yoluna park etmek. Yaz aylarında plaj çevresinde süre sınırları ve geçici yasaklar artıyor.</li>
+  </ul>
+
+  <table class="facts">
+    <tr><th>Tipik park cezası</th><td class="price">40–80 €</td></tr>
+    <tr><th>Ağır ihlaller (engelli erişimi, acil yol, trafik akışı)</th><td>Çok daha yüksek ceza, tekrarda artıyor</td></tr>
+    <tr><th>Kiralık araçta ceza</th><td>Kiralama şirketi üzerinden size yansıtılır, işlem ücreti eklenebilir. Ülkeden ayrıldıktan sonra da gelebilir.</td></tr>
+  </table>
+
+  <div class="note"><b>Kaynak notu:</b> Bu bilgiler Girit odaklı bir kiralama şirketi rehberinden. Genel kurallar ülke çapında aynı olsa da ücretli bölge saatleri ve ödeme uygulamaları Selanik, Kavala ve Dedeağaç gibi şehirlerde belediyeye göre farklılaşabilir. Bu şehirleri ayrıca doğruluyoruz.</div>
+
+  <h3>Aileler için pratik öneriler</h3>
+  <ul class="tips">
+    <li>Tarihî merkez ve liman çevresinde sokak yerine belediye veya özel otopark seçin. Daha güvenli ve cezasız.</li>
+    <li>Selanik gibi şehirlerde merkezde park yeri bulmak zor olabiliyor. Otel rezervasyonunda "park yeri" bilgisine bakın. Bazı oteller kendi otoparkına sahip değil, yakın ücretli otopark öneriyor.</li>
+    <li>Erken sabah ve akşam saatlerinde park etmek kolaylaşıyor ve kısıtlamalar azalıyor.</li>
+    <li>Aracın içinde değerli eşya, çocuk çantası ya da bagaj görünür halde bırakmayın.</li>
+  </ul>
+</section>
+
+<section id="sofya-park">
+  <h2>Sofya'da park: mavi ve yeşil bölge</h2>
+  <p class="lead">Şehir merkezi mavi bölge, çevresi yeşil bölge. En dış mahalleler bölge dışında. 5 Ocak 2026'dan itibaren ücretler iki katına çıktı ve bölgeler genişletildi.</p>
+
+  <div class="scroll">
+  <table class="facts">
+    <tr><th>Mavi bölge (merkez)</th><td class="price">2 € / saat</td></tr>
+    <tr><th>Yeşil bölge (çevre)</th><td class="price">1 € / saat</td></tr>
+    <tr><th>Ziyaretçi için süre sınırı</th><td>En fazla 3 saat</td></tr>
+    <tr><th>Ziyaretçi tarifesi (yayımlanan örnek)</th><td>30 dk 0,50 € · 2 saat 2 € · 2,5 saat 4 € · 3 saat 6 €</td></tr>
+  </table>
+  </div>
+
+  <p>Ödemede kâğıt bilet 2026 ortasından itibaren aşamalı olarak kaldırılıyor. Önceki dönemde mümkün olan SMS ile ödeme ve kâğıt bilet yöntemi sona eriyor, yerine dijital ödeme geliyor. Sofya'ya gitmeden önce belediyenin park uygulamasını telefonunuza kurun.</p>
+
+  <div class="note"><b>Dikkat:</b> İki farklı kaynakta ücret anlatımı biraz farklı (saatlik tarife ve ziyaretçi için artan tarife). Park ettiğiniz bölgedeki levhayı ve uygulamadaki güncel tarifeyi esas alın. Yeni yeşil bölgeler 2026 boyunca aşamalı olarak devreye alınıyor, bu yüzden daha önce park edilebilen bir sokak artık ücretli olabilir.</div>
+</section>
+
+<section id="vinyet">
+  <h2>Bulgaristan vinyeti: plakayı iki kez kontrol edin</h2>
+  <p class="lead">Bulgaristan'da otoyollar ile birinci, ikinci ve üçüncü sınıf devlet yollarında geçerli vinyet gerekiyor. Vinyet elektronik ve aracın plakasına kayıtlı.</p>
+
+  <p>2026 yılında elektronik vinyet fiyatları değişmedi ve hem Euro hem de Leva cinsinden gösteriliyor. Ödeme sırasında plaka numarasını ve "TR" ülke kodunu doğru girdiğinizden emin olun.</p>
+
+  <table class="facts">
+    <tr><th>Yıllık</th><td class="price">49,60 €</td></tr>
+    <tr><th>Üç aylık</th><td class="price">27,61 €</td></tr>
+    <tr><th>Aylık</th><td class="price">15,34 €</td></tr>
+    <tr><th>Haftalık</th><td class="price">7,67 €</td></tr>
+    <tr><th>Hafta sonu</th><td class="price">5,11 €</td></tr>
+    <tr><th>Günlük (3 Şubat 2026'dan itibaren)</th><td class="price">4,09 €</td></tr>
+  </table>
+
+  <div class="note"><b>En sık yapılan hata:</b> Satın alırken plaka numarasını ya da araç tescil ülke kodunu yanlış girmek. Sistem plakaya bağlı çalıştığı için yanlış girilen vinyet geçersiz sayılır. Ödemeden önce plakayı ve "TR" ülke kodunu kontrol edin.</div>
+
+  <div class="note"><b>Resmî uyarı:</b> Bulgaristan Ulusal Geçiş Ücreti İdaresi, bazı internet platformlarının vinyetleri gizli veya gerekçesiz ek ücretlerle neredeyse iki katı fiyata sattığını tespit etti. Yalnızca <strong>www.bgtoll.bg</strong>, resmî mobil uygulama veya yetkili satış noktalarından satın alın.</div>
+
+  <div class="helper">
+    <label for="gun">Bulgaristan'da kaç gün yol kullanacaksınız?</label>
+    <div class="row">
+      <input id="gun" type="number" min="1" max="365" value="10" inputmode="numeric">
+      <span>gün</span>
+    </div>
+    <output id="sonuc" for="gun" aria-live="polite"></output>
+    <p style="font-size:.9rem;color:var(--muted);margin:10px 0 0">Hesap yalnızca yukarıdaki altı vinyet türünü karşılaştırır. Geçerlilik sürelerini satın alma sayfasında teyit edin.</p>
+  </div>
+</section>
+
+<section id="yunan-yol">
+  <h2>Yunanistan'da otoyol ücreti</h2>
+  <p class="lead">Yunanistan'da otoyolların çoğu ücretli. Her otoyolu ayrı bir şirket işletiyor ve ücret gişelerde nakit, kredi kartı veya araç içi cihazla ödeniyor. Cihazlar işletmeciler arasında uyumlu.</p>
+
+  <h3>Egnatia Otoyolu (kuzey, Türkiye sınırına yakın)</h3>
+  <p>Egnatia, batıda Igoumenitsa'dan doğuda Türkiye sınırına yakın Evros bölgesine uzanıyor. 1 Ocak 2026'dan itibaren imtiyaz sözleşmesi kapsamında ücretlendirme kilometre başına 0,04 € artı KDV üzerinden hesaplanıyor.</p>
+
+  <table class="facts">
+    <tr><th>Tüm hat için binek araç (Igoumenitsa–Evros)</th><td class="price">30,45 €</td></tr>
+    <tr><th>Önceki tutar</th><td class="price">24,45 €</td></tr>
+    <tr><th>Abonelik indirimleri (EgnatiaPass)</th><td>Artık uygulanmıyor</td></tr>
+    <tr><th>Ücretsiz geçiş</th><td>Yalnızca bölgede sürekli yaşayanlara, sınırlı süreyle</td></tr>
+  </table>
+
+  <h3>Diğer ücretli yollar (1 Ocak 2026'dan itibaren geçerli)</h3>
+  <p>Aşağıdaki güzergâhlarda binek araç geçiş ücretleri 2026 yılında güncellendi.</p>
+
+  <div class="scroll">
+  <table class="facts">
+    <tr><th>Patra – Elefsina</th><td class="price">13,80 €</td><td><span style="color:var(--muted);font-size:.9rem">(önceki: 13,30 €)</span></td></tr>
+    <tr><th>Antirrio – Ioannina</th><td class="price">15,00 €</td><td><span style="color:var(--muted);font-size:.9rem">(önceki: 14,35 €)</span></td></tr>
+    <tr><th>Korinthos – Tripoli – Kalamata</th><td class="price">11,75 €</td><td><span style="color:var(--muted);font-size:.9rem">(önceki: 11,30 €)</span></td></tr>
+    <tr><th>Rio – Antirrio Köprüsü</th><td class="price">15,90 €</td><td><span style="color:var(--muted);font-size:.9rem">(önceki: 15,20 €)</span></td></tr>
+    <tr><th>Attiki Odos (Atina çevre yolu)</th><td class="price">2,55 €</td><td><span style="color:var(--muted);font-size:.9rem">(önceki: 2,50 €)</span></td></tr>
+  </table>
+  </div>
+
+  <p><strong>Not:</strong> Atina – Selanik (A1/PAThE) hattının tamamı için tek yön geçiş ücreti yaklaşık 36,70 € civarındadır. Bu tutar Afidnes, Thiva, Tragána gibi 12 gişenin toplamını kapsar.</p>
+
+  <div class="note"><b>Pratik not:</b> Gişelerde kart kabul ediliyor ama nakit euro bulundurmak yedek çözüm olarak iyi. Egnatia'da yol onarım çalışmaları sürüyor, bu yüzden süre hesabınıza biraz pay bırakın. Güzergah bazlı net tutarı yola çıkmadan işletmecilerin sitelerinden kontrol edin.</div>
+</section>
+
+<section id="siradaki">
+  <h2>Rehbere eklenecek bölümler</h2>
+  <p>Aşağıdaki başlıklar henüz güncel kaynaklarla doğrulanmadı, bu yüzden yayımlanmadı. Tamamlandıkça buraya eklenecek.</p>
+  <ul class="soon">
+    <li><b>Trafik kuralları:</b> Hız limitleri, çocuk koltuğu, alkol sınırı, radar ve kamera uygulamaları.</li>
+    <li><b>Şehir bazlı park rehberi:</b> Selanik, Kavala, Dedeağaç, Plovdiv ve Varna.</li>
+  </ul>
+</section>
+
+</main>
+
+<footer id="kaynaklar">
+  <div class="wrap">
+    <p><b>Son kontrol:</b> 12 Ekim 2026. Fiyatlar ve kurallar sık değişir. Yola çıkmadan önce resmî kaynaklardan teyit edin.</p>
+    <p>Bu rehber genel bilgi amaçlıdır, hukuki veya resmî tavsiye değildir.</p>
+    <p>Kaynaklar:</p>
+    <ul>
+      <li><a href="https://bgtoll.bg/tr/haberler/guncel/e-vinyetler-wwwbgtollbg-mobil-uygulama-ve-yetkili-satis-noktalarindan-satin-alinabilir">BG TOLL: 2026 vinyet fiyatları</a></li>
+      <li><a href="https://bgtoll.bg/en/news/up-to-date-information/vignettes-can-be-purchased-from-wwwbgtollbg-the-mobile-application-and-the-official-partner-network-prices-are-fixed-and-involve-no-additional-fees">BG TOLL: Sabit fiyatlar ve resmî satış kanalları</a></li>
+      <li><a href="https://www.ertnews.gr/roi-idiseon/ayksiseis-sta-diodia-apo-1i-ianouariou-2026-poso-tha-kostizoun-oi-vasikoi-aytokinitodromoi/">ERT News: 2026 geçiş ücreti artışları</a></li>
+      <li><a href="https://en.protothema.gr/2026/01/07/details-of-the-new-prices-in-all-the-countrys-tolls-the-increases-in-attiki-odos-the-golden-crossing-of-rio-and-the-ionian-road/">ProtoThema: Tüm geçiş ücretleri detayı</a></li>
+      <li><a href="https://bnrnews.bg/kardzhali/post/408423/poskapvat-patnite-taksi-na-magistrala-egnatiya-v-gartsiya">BNR: Egnatia Otoyolu ücret artışı</a></li>
+      <li><a href="https://sofiaglobe.com/?p=125434">Sofia Globe: Sofia park ücretleri</a></li>
+      <li><a href="https://www.bta.bg/en/news/1023600-how-balkan-capitals-handle-parking-and-what-it-costs">BTA: Balkan başkentlerinde park</a></li>
+      <li><a href="https://www.motor-plan.com/en/rental-tips/rules-of-parking-cars-in-greece">Motor-Plan: Yunanistan'da park kuralları</a></li>
+      <li><a href="https://www.mfa.gov.tr/bulgaristan.tr.mfa">T.C. Dışişleri Bakanlığı: Bulgaristan seyahat bilgileri</a></li>
+      <li><a href="https://www.cnnturk.com/turkiye/kapikulede-gurbetci-yogunlugu-3-kilometre-arac-kuyrugu">CNN Türk: Kapıkule yoğunluğu</a></li>
+      <li><a href="https://nakordoni.eu/tr/id/id_385/real_time/1">Nakordoni: Kapıkule kuyruk bilgisi</a></li>
+      <li><a href="https://tolls.eu/greece">Tolls.eu: Yunanistan otoyol ücretleri</a></li>
+      <li><a href="https://www.sigortam.net/arabayla-yunanistana-nasil-kac-saatte-gidilir">Sigortam.net: Arabayla Yunanistan'a nasıl gidilir</a></li>
+      <li><a href="https://yolcu360.com/blog/turkiyeden-yunanistana-arabayla-gitmek-nasil-oluyor/">Yolcu360: Türkiye'den Yunanistan'a arabayla gitmek</a></li>
+    </ul>
+  </div>
+</footer>
+
+<script>
+(function () {
+  var input = document.getElementById('gun');
+  var out = document.getElementById('sonuc');
+  function render() {
+    var d = parseInt(input.value, 10);
+    if (!d || d < 1) { out.textContent = 'Gün sayısını girin.'; return; }
+    var pick;
+    if (d <= 1) pick = ['Günlük vinyet', '4,09 €'];
+    else if (d <= 2) pick = ['Hafta sonu vinyet', '5,11 €'];
+    else if (d <= 7) pick = ['Haftalık vinyet', '7,67 €'];
+    else if (d <= 31) pick = ['Aylık vinyet', '15,34 €'];
+    else if (d <= 92) pick = ['Üç aylık vinyet', '27,61 €'];
+    else pick = ['Yıllık vinyet', '49,60 €'];
+    out.innerHTML = d + ' gün için en uygun seçenek: <strong>' + pick[0] + ', ' + pick[1] + '</strong>';
+  }
+  input.addEventListener('input', render);
+  render();
+})();
+</script>
+</body>
+</html>
+```
